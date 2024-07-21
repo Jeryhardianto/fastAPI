@@ -2,3 +2,7 @@
 fastapi
 uvicorn
 pymongo
+passlib
+bcrypt
+python-multipart
+pyjwt

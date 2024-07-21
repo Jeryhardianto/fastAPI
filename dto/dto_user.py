@@ -1,4 +1,3 @@
-from typing import Optional
 from pydantic import BaseModel
 from enums.enum_tipe import TipeEnum
 
@@ -11,3 +10,5 @@ class InputUser(BaseModel):
 class InputLogin(BaseModel):
     username: str
     password: str
+class OutputLogin(BaseModel):
+    access_token: str

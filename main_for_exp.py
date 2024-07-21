@@ -49,22 +49,22 @@ class Transaction(BaseModel):
 
 # Get Request
 @app.get("/transactions")
-def get_transactions():
+def get_list_transaction():
     return {"data": transactions}
     
 # Get Request with Query Parameters 
 @app.get("/transactionswithparams")
-def get_transactions(tipe: str, amount: int):
+def get_list_transaction(tipe: str, amount: int):
     return {"data": "Type: " + tipe + " Amount: " + str(amount)}
 
 # Get Request with Path Parameters
 @app.get("/transactionspath/{tipe}")
-def get_transactions(tipe: str):
+def get_list_transaction(tipe: str):
     return {"data": "Type: " + tipe }
 
 # Get Request with Filter
 @app.get("/transactionswithfilter")
-def get_transactions(tipe:Optional[TipeEnum] = None):
+def get_list_transaction(tipe:Optional[TipeEnum] = None):
     if tipe:
         result = transactions.find({"tipe": tipe})
     else:
